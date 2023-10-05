@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #555;
+    padding: 10px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ddd;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+section {
+    margin: 20px 50px;
+}
+
+footer {
+    background-color: #555;
+    color: #ccc;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+}
+
+label, select, button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #888;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #aaa;
+}
+
+canvas {
+    width: 80%;  /* Reducir el tamaño de la gráfica */
+    height: 300px;  /* Reducir el tamaño de la gráfica */
+    display: block;
+    margin: 0 auto;  /* Centrar la gráfica */
+}
+
+#logo {
+    text-align: center;
+    margin-top: 20px;
+}

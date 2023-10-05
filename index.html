@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Aplicación del Teorema del Límite Central en Investigación Educativa</title>
+</head>
+<body>
+    <header>
+        <h1>Teorema del Límite Central en Investigación Educativa</h1>
+    </header>
+    <section id="intro">
+        <h2>Introducción al Teorema del Límite Central (TLC)</h2>
+        <p>
+            El Teorema del Límite Central es uno de los conceptos más fundamentales en estadística.
+            Establece que, dada una población de cualquier forma de distribución, la distribución de la media
+            de una muestra tiende a ser normal o gaussiana cuando el tamaño de la muestra aumenta.
+        </p>
+        <p>
+            <strong>Fórmula del TLC:</strong> 
+            \[ \bar{X} \approx N \left( \mu, \frac{\sigma}{\sqrt{n}} \right) \]
+            Donde:
+            - \(\bar{X}\) es la media de la muestra
+            - \(\mu\) es la media de la población
+            - \(\sigma\) es la desviación estándar de la población
+            - \(n\) es el tamaño de la muestra
+        </p>
+        <p>
+            El TLC es útil para hacer inferencias sobre una población basada en los resultados de la muestra. 
+            Es ampliamente utilizado en investigación, incluyendo la educativa, para, por ejemplo, inferir el rendimiento 
+            académico de todos los estudiantes de una escuela o región, basándose en una muestra de estudiantes.
+        </p>
+        <p>
+            <strong>Ejemplo:</strong> Si una población de puntajes de exámenes tiene una media \(\mu = 75\) y una 
+            desviación estándar \(\sigma = 10\), y tomamos una muestra de \(n = 30\) estudiantes, la distribución 
+            de la media muestral estará dada por:
+            \[ \bar{X} \approx N \left( 75, \frac{10}{\sqrt{30}} \right) \]
+        </p>
+    </section>
+    <section id="validacion">
+        <h2>Validación para la Aplicación del TLC</h2>
+        <p>Responda las siguientes preguntas para determinar si el TLC es aplicable a su investigación:</p>
+        <form id="form_validacion">
+            <label for="pregunta1">1. ¿Su muestra es aleatoria?</label>
+            <select id="pregunta1" name="pregunta1">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select><br>
+            <label for="pregunta2">2. ¿El tamaño de la muestra es mayor a 30 o la población de la que se extrae la muestra es normal?</label>
+            <select id="pregunta2" name="pregunta2">
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select><br>
+            <button type="button" onclick="validar()">Validar</button>
+        </form>
+        <p id="resultado_validacion"></p>
+    </section>
+    <section id="aplicacion">
+        <h2>Aplicación del TLC</h2>
+        <p>Utilice la barra deslizante para ajustar el tamaño de la muestra (\(m\)) y observe cómo afecta la distribución de la muestra:</p>
+        <label for="media_muestral">Tamaño de la muestra (\(m\)): <span id="valor_media_muestral">30</span></label>
+        <input type="range" min="1" max="500" value="30" id="media_muestral" oninput="calcular()">
+        <canvas id="myChart"></canvas>
+        <p><strong>Eje X:</strong> Puntajes de examen</p>
+        <p><strong>Eje Y:</strong> Frecuencia de los puntajes</p>
+    </section>
+    <section id="logo">
+        <img src="logo.png" width="200">
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
